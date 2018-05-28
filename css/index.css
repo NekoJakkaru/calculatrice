@@ -21,3 +21,7 @@ form input {
     height: 115px;
     display: inline-block;
 }
+
+.large {
+    width: 48.7%;
+}

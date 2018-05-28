@@ -48,7 +48,8 @@ function calcule(operation) {
     var strNumber1 = '';
     var strNumber2 = '';
     var operator = '';
-    for( i = 0; i < cal.length; i+=1){
+
+    for( i = 0; i < cal.length-1; i+=1){
         if(operator == ''){
             if (cal[i]=="=" || cal[i]=="+" || cal[i]=="-" || cal[i]=="*" || cal[i]=="/"){
                 operator = cal[i];
@@ -58,14 +59,31 @@ function calcule(operation) {
             }
         } else {
             if (cal[i]=="=" || cal[i]=="+" || cal[i]=="-" || cal[i]=="*" || cal[i]=="/"){
-                alert("Fucking error you have 2 operators!")
+                operator = '';
             } else {
                 console.log("s'est un chiffre : " + cal[i]);
                 strNumber2 += cal[i];
             }
         }
     }
-    return strNumber1;
+
+    var number1 = parseFloat(strNumber1);
+    var number2 = parseFloat(strNumber2);
+    if(operator == '-') {
+        return number1 - number2;
+    }
+    if(operator == '+') {
+        return number1 + number2;
+    }
+    if(operator == '*') {
+        return number1 * number2;
+    }
+    if(operator == '/') {
+        return number1 / number2;
+    }
+    if(operator == '') {
+        return "error!";
+    }
 }
 
 
