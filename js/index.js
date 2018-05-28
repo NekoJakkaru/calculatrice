@@ -42,7 +42,30 @@ function writeOperation(mychar) {
 };
 
 function calcule(operation) {
-    return ;
+    var cal = screen.innerHTML;
+    console.log(cal[0]);
+    console.log(cal[cal.length-1]);
+    var strNumber1 = '';
+    var strNumber2 = '';
+    var operator = '';
+    for( i = 0; i < cal.length; i+=1){
+        if(operator == ''){
+            if (cal[i]=="=" || cal[i]=="+" || cal[i]=="-" || cal[i]=="*" || cal[i]=="/"){
+                operator = cal[i];
+            } else {
+                console.log("s'est un chiffre : " + cal[i]);
+                strNumber1 += cal[i];
+            }
+        } else {
+            if (cal[i]=="=" || cal[i]=="+" || cal[i]=="-" || cal[i]=="*" || cal[i]=="/"){
+                alert("Fucking error you have 2 operators!")
+            } else {
+                console.log("s'est un chiffre : " + cal[i]);
+                strNumber2 += cal[i];
+            }
+        }
+    }
+    return strNumber1;
 }
 
 
