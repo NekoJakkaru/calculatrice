@@ -17,52 +17,81 @@ var btn_7 = document.getElementById('7');
 var btn_8 = document.getElementById('8');
 var btn_9 = document.getElementById('9');
 
-btn_0.addEventListener("click", function(){
-    screen.innerHTML = btn_0.value;
+
+var finishOp = false;
+
+
+function writeOperation(mychar) {
+    if(finishOp) {
+        screen.innerHTML = mychar; //efface l'écran et recommence de Zero.
+    }
+
+    else {
+        screen.innerHTML += mychar;
+    }
+
+    if(mychar=='=') {
+        screen.innerHTML += calcule();
+        finishOp = true;
+    }
+
+    else {
+        finishOp = false;
+    }
+
+};
+
+function calcule(operation) {
+    return ;
+}
+
+
+btn_0.addEventListener("click", function() {
+    writeOperation(btn_0.value);
+
 });
-btn_1.addEventListener("click", function(){
-    screen.innerHTML = btn_1.value;
+btn_1.addEventListener("click", function() {
+    writeOperation(btn_1.value);
 });
-btn_2.addEventListener("click", function(){
-    screen.innerHTML = btn_2.value;
+btn_2.addEventListener("click", function() {
+    writeOperation(btn_2.value);
 });
-btn_3.addEventListener("click", function(){
-    screen.innerHTML = btn_3.value;
+btn_3.addEventListener("click", function() {
+    writeOperation(btn_3.value);
 });
-btn_4.addEventListener("click", function(){
-    screen.innerHTML = btn_4.value;
+btn_4.addEventListener("click", function() {
+    writeOperation(btn_4.value);
 });
-btn_5.addEventListener("click", function(){
-    screen.innerHTML = btn_5.value;
+btn_5.addEventListener("click", function() {
+    writeOperation(btn_5.value);
 });
-btn_6.addEventListener("click", function(){
-    screen.innerHTML = btn_6.value;
+btn_6.addEventListener("click", function() {
+    writeOperation(btn_6.value);
 });
-btn_7.addEventListener("click", function(){
-    screen.innerHTML = btn_7.value;
+btn_7.addEventListener("click", function() {
+    writeOperation(btn_7.value);
 });
-btn_8.addEventListener("click", function(){
-    screen.innerHTML = btn_8.value;
+btn_8.addEventListener("click", function() {
+    writeOperation(btn_8.value);
 });
-btn_9.addEventListener("click", function(){
-    screen.innerHTML = btn_9.value;
+btn_9.addEventListener("click", function() {
+    writeOperation(btn_9.value);
 });
 
-btnMultiply.addEventListener("click", function(){
-    screen.innerHTML = btnMultiply.value;
+btnMultiply.addEventListener("click", function() {
+    writeOperation(btnMultiply.value);
 });
-btnAdd.addEventListener("click", function(){
-    screen.innerHTML = btnAdd.value;
+btnAdd.addEventListener("click", function() {
+    writeOperation(btnAdd.value);
 });
-btnSubtract.addEventListener("click", function(){
-    screen.innerHTML = btnSubtract.value;
+btnSubtract.addEventListener("click", function() {
+    writeOperation(btnSubtract.value);
 });
-btnDivide.addEventListener("click", function(){
-    screen.innerHTML = btnDivide.value;
+btnDivide.addEventListener("click", function() {
+    writeOperation(btnDivide.value);
 });
 
-btnResult.addEventListener("click", function(){
-    var operation = screen.innerHTML;
-    screen.innerHTML = btnResult.value;
+btnResult.addEventListener("click", function() {
+    writeOperation(btnResult.value);
 
 });
